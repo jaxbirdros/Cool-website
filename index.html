@@ -4,9 +4,32 @@
   <meta charset="UTF-8">
   <title>My Website</title>
   <link rel="stylesheet" href="hi.css">
-  </head>
-  <body>
-    <div class="image">
-<a href="https://www.youtube.com/watch?v=SiJie3Z7DG8" class="random-link"><img src= "https://codehs.com/uploads/ab339ca882e256c27b64b7e36546f7a8" > </a>
-</div>
-  </body>
+</head>
+<body>
+  <div class="image">
+    <a href="https://www.youtube.com/watch?v=SiJie3Z7DG8" class="random-link">
+      <img src="https://codehs.com/uploads/ab339ca882e256c27b64b7e36546f7a8" alt="Moving Kitten">
+    </a>
+  </div>
+
+  <script>
+    const linkElements = document.querySelectorAll('.random-link');
+
+    function moveImagesRandomly() {
+      linkElements.forEach((link) => {
+        const maxX = window.innerWidth - link.clientWidth;
+        const maxY = window.innerHeight - link.clientHeight;
+
+        const randomX = Math.floor(Math.random() * maxX);
+        const randomY = Math.floor(Math.random() * maxY);
+
+        link.style.left = `${randomX}px`;
+        link.style.top = `${randomY}px`;
+      });
+    }
+
+    setInterval(moveImagesRandomly, 2000);
+    moveImagesRandomly();
+  </script>
+</body>
+</html>
