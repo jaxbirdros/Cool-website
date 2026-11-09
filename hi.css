@@ -1,13 +1,22 @@
 .random-link {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 10%;
+  left: 10%;
   z-index: 9999;
-  transition: top 0.5s ease, left 0.5s ease;
+  animation: moveRandomly 10s infinite alternate ease-in-out;
 }
 
 .random-link img {
   width: 100px;
   height: auto;
   display: block;
+}
+
+@keyframes moveRandomly {
+  0%   { top: 10%; left: 10%; }
+  20%  { top: 70%; left: 80%; }
+  40%  { top: 20%; left: 65%; }
+  60%  { top: 80%; left: 15%; }
+  80%  { top: 40%; left: 45%; }
+  100% { top: 15%; left: 75%; }
 }
